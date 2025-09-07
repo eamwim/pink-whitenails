@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+body {
+    background-color: #fdf6fd;
+    font-family: sans-serif;
+    text-align: center;
+    /* Center all the text inside the body */
+}
+
+h1 {
+    color: #ffb0ff
+}
+
+/* =================
+   Header & Navigation Styles
+   ================= */
+
+.main-header {
+    display: flex;
+    /* This is the key! It aligns its children (logo and nav) side-by-side. */
+    justify-content: center;
+    /* Pushes the logo to the far left and the nav to the far right. */
+    align-items: center;
+    /* Vertically aligns them perfectly in the middle. */
+    gap: 40px;
+    padding: 15px 30px;
+    /* Adds spacing: 15px on top/bottom, 30px on left/right. */
+    background-color: #ffffff;
+    /* Gives the header a white background. */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 2.2rem;
+    /* Makes the logo text bigger (rem is a modern size unit). */
+    font-family: 'Playfair Display', serif;
+    font-weight: none;
+    color: #ffb0ff;
+    /* Our deep purple color */
+    text-decoration: none;
+    /* Removes the default underline from the link. */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav ul {
+    list-style-type: none;
+    /* This is important! It removes the bullet points. */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* Aligns the list items themselves side-by-side. */
+}
+
+.main-nav li {
+    margin-left: 25px;
+    /* Adds some space TO THE LEFT of each menu item so they aren't crowded. */
+}
+
+.main-nav a {
+    text-decoration: none;
+    /* Removes the underline from the menu links. */
+    color: #555555;
+    /* A dark gray for the text. */
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    /* This creates a smooth color change for the hover effect. */
+}
+
+/* This is a "pseudo-class". It styles the link ONLY when you hover your mouse over it. */
+.main-nav a:hover {
+    background-color: #fdf6fd;
+    color: #b56ab5;
+    /* A brighter purple for the hover effect */
+}
+
+/* =================
+   Hero Section Styles
+   ================= */
+
+.hero {
+    /* The Background Image */
+    background-image: url('images/salon-hero.jpg');
+    /* Make sure your image name matches! */
+    background-size: cover;
+    /* This makes the image cover the entire section, no matter the screen size. */
+    background-position: center;
+    /* This centers the image in the section. */
+
+    /* Sizing and Centering */
+    min-height: 80vh;
+    /* This makes the section take up 80% of the browser's viewport height. */
+    position: relative;
+    /* This is CRUCIAL for the dark overlay we'll add next. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    /* We're making all the text inside white. */
+}
+
+/* This is the dark overlay that makes text readable on top of a busy image. */
+.hero::before {
+    content: '';
+    /* This is required for pseudo-elements to work. */
+    position: absolute;
+    /* Takes the element out of the normal document flow. */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black with 50% transparency. */
+}
+
+/* We need to make sure our content sits ON TOP of the overlay. */
+.hero-content {
+    position: relative;
+    /* You can also use z-index here, but this is simpler. */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    /* Make the main heading much bigger. */
+    margin-bottom: 0.5rem;
+    /* Add a little space below it. */
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    font-family: 'Quicksand', sans-serif;
+    /* Add more space below the paragraph to separate it from the button. */
+}
+
+/* =================
+   CTA Nav Button
+   ================= */
+
+.cta-nav {
+    background-color: #b56ab5;
+    color: #ffffff !important;
+    /* !important makes sure it overrides other link colors */
+    border-radius: 20px;
+}
+
+.cta-nav:hover {
+    background-color: #9d4b9d;
+    /* A darker purple */
+    color: #ffffff !important;
+}
+
+.cta-button {
+    background-color: #b56ab5;
+    /* Our brighter purple from the nav hover */
+    color: #ffffff;
+    padding: 15px 35px;
+    /* 15px top/bottom, 35px left/right */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    /* This gives it slightly rounded corners. */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for the hover effect */
+}
+
+.cta-button:hover {
+    background-color: #9d4b9d;
+    /* A slightly darker purple for when you hover. */
+}
+
+/* =================
+   Services Section Styles
+   ================= */
+
+.services-section {
+    padding: 60px 0;
+    /* Adds 60px of space on the top and bottom */
+}
+
+/* This is a reusable utility class we can use on other sections too! */
+.container {
+    max-width: 1100px;
+    /* Sets a maximum width for our content */
+    margin: 0 auto;
+    /* This is a trick to auto-center the container */
+    padding: 0 20px;
+    /* Ensures content doesn't touch the screen edges on mobile */
+}
+
+.services-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a1d4a;
+    /* Our primary purple */
+    margin-bottom: 40px;
+    /* Adds space below the heading */
+}
+
+/* Here is the CSS Grid magic */
+.services-grid {
+    display: grid;
+    /* This next line creates 3 columns of equal width (1fr = 1 fraction) */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    /* This creates a 30px gap between the columns */
+}
+
+.service-item {
+    background-color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    /* Slightly more rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* A subtle shadow to lift the card off the page */
+    transition: transform 0.3s ease;
+    /* Smooth transition for the hover effect */
+}
+
+.service-item:hover {
+    transform: translateY(-30px);
+    /* Lifts the card up slightly when you hover */
+}
+
+.service-item h3 {
+    color: #4a1d4a;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* =================
+   Gallery Section Styles
+   ================= */
+
+.gallery-section {
+    padding: 60px 0;
+    background-color: #fdf6fd;
+    /* Same light purple as our body */
+}
+
+.gallery-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a1d4a;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    /* We'll start with 3 columns, but you can change this to 2 or 4! */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    /* A smaller gap looks good for photo grids */
+}
+
+.gallery-item {
+    overflow: hidden;
+    /* This is essential for the zoom effect to look clean */
+    border-radius: 8px;
+    /* Rounded corners for the images */
+    aspect-ratio: 1 / 1;
+
+}
+
+.gallery-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-item img {
+    width: 100%;
+    /* Makes the image fill its container horizontally */
+    height: 100%;
+    /* Makes the image fill its container vertically */
+    object-fit: cover;
+    /* SUPER IMPORTANT: Prevents images from stretching or squishing. It will crop to fit. */
+    display: block;
+    /* Removes a tiny bit of extra space browsers sometimes add under images */
+    transition: transform 0.4s ease;
+    /* Smooth transition for our zoom effect */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    /* Zooms the image in by 10% on hover */
+}
+
+/* =================
+   Footer Styles
+   ================= */
+
+.main-footer {
+    background-color: #4a1d4a;
+    /* Our primary dark purple */
+    color: #ffffff;
+    padding: 50px 0 20px 0;
+    /* 50px top, 0 left/right, 20px bottom */
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #b56ab5;
+    /* Accent line under headings */
+    padding-bottom: 10px;
+}
+
+.footer-column p {
+    line-height: 1.6;
+    /* More space between lines of text */
+    opacity: 0.8;
+    /* Makes the text slightly less bright, easier to read */
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 1.8rem;
+    /* Makes icons bigger */
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #E1AFD1;
+    /* A lighter, brighter purple on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #5d2a5d;
+    /* A subtle separator line */
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+/* =================
+   Contact Page Styles
+   ================= */
+
+.contact-section {
+    padding: 60px 0;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a1d4a;
+}
+
+.contact-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns */
+    gap: 40px;
+    align-items: start;
+}
+
+/* Form Styles */
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4a1d4a;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* Making the contact grid responsive */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        /* Stack the form and map on mobile */
+    }
+}
+
+/* =================
+   Services Page Styles
+   ================= */
+
+.page-section {
+    padding: 60px 0;
+}
+
+.page-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a1d4a;
+    margin-bottom: 40px;
+}
+
+.service-category {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    /* Center the category blocks */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Keeps the child elements inside the rounded corners */
+}
+
+.service-category h3 {
+    background-color: #fdf6fd;
+    color: #4a1d4a;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.service-listing {
+    display: flex;
+    /* Lines up the name and price */
+    justify-content: space-between;
+    /* Pushes them to opposite ends */
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Removes the bottom border from the very last item in a category */
+.service-listing:last-child {
+    border-bottom: none;
+}
+
+.service-name {
+    margin: 0;
+    color: #333;
+}
+
+.service-price {
+    margin: 0;
+    font-weight: bold;
+    color: #4a1d4a;
+}
+
+/* =================
+   Services Page Styles
+   ================= */
+
+.page-section {
+    padding: 60px 0;
+}
+
+.page-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a1d4a;
+    margin-bottom: 40px;
+}
+
+.service-category {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    /* Center the category blocks */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Keeps the child elements inside the rounded corners */
+}
+
+.service-category h3 {
+    background-color: #fdf6fd;
+    color: #4a1d4a;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.service-listing {
+    display: flex;
+    /* Lines up the name and price */
+    justify-content: space-between;
+    /* Pushes them to opposite ends */
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Removes the bottom border from the very last item in a category */
+.service-listing:last-child {
+    border-bottom: none;
+}
+
+.service-name {
+    margin: 0;
+    color: #333;
+}
+
+.service-price {
+    margin: 0;
+    font-weight: bold;
+    color: #4a1d4a;
+}
+
+/* =================
+   Testimonials Section Styles
+   ================= */
+
+.testimonials-section {
+    padding: 60px 0;
+    background-color: #fdf6fd;
+    /* Our light lavender background */
+}
+
+.testimonials-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a1d4a;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    /* Needed for positioning the icon */
+    padding-top: 50px;
+}
+
+.testimonial-card .fa-quote-left {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    font-size: 2.5rem;
+    color: #b56ab5;
+    opacity: 0.15;
+}
+
+.testimonial-card blockquote {
+    margin: 0 0 15px 0;
+    font-style: italic;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    margin: 0;
+    font-weight: bold;
+    color: #4a1d4a;
+    text-align: right;
+}
+
+/* =================
+   RESPONSIVE STYLES (for tablets and phones)
+   ================= */
+
+@media (max-width: 768px) {
+
+    /* --- HEADER & NAV --- */
+    .main-header {
+        flex-direction: row;
+        /* Keeps logo and icon in a row */
+        justify-content: space-between;
+        /* Pushes them to opposite ends */
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Shows the hamburger button */
+    }
+
+    .main-nav {
+        /* This creates the slide-out panel */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100%;
+        background-color: #ffffff;
+        padding-top: 60px;
+        z-index: 1000;
+        /* Hide it off-screen to the right by default */
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .main-nav.is-open {
+        /* This class is added by JavaScript to show the menu */
+        transform: translateX(0);
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .main-nav li {
+        margin-left: 0;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* --- GRIDS (Services, Gallery, etc.) --- */
+    .services-grid,
+    .gallery-grid,
+    .testimonials-grid,
+    .footer-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        /* Stacks all grids into a single column */
+    }
+
+    /* --- HEADINGS --- */
+    .services-section h2,
+    .gallery-section h2,
+    .testimonials-section h2,
+    .page-heading {
+        font-size: 2rem;
+    }
+}
+
+/* Testimonials */
+.testimonials-grid {
+    grid-template-columns: 1fr;
+}
+
+
+
+/* =================
+   Back to Top Button
+   ================= */
+.back-to-top-btn {
+    position: fixed;
+    /* This keeps it in place while you scroll */
+    bottom: 20px;
+    right: 20px;
+    background-color: #4a1d4a;
+    /* Our dark purple */
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* This makes it a perfect circle */
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 1000;
+    /* Makes sure it's on top of everything else */
+
+    /* Hide it by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.back-to-top-btn.show {
+    /* This class will be added by JavaScript to show the button */
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top-btn:hover {
+    background-color: #b56ab5;
+    /* The lighter purple */
+}
+
+.menu-toggle {
+    display: none;
+    /* Hidden on desktop */
+    background: transparent;
+    border: none;
+    color: #4a1d4a;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
